@@ -1,10 +1,10 @@
-using Photon.Pun;
+﻿using Photon.Pun;
 using UnityEngine;
 
-namespace mark1
+namespace mark1.multiplayer
 {
     [RequireComponent(typeof(PhotonView))]
-    public class SpawnPoint : MonoBehaviourPunCallbacks
+    public class UserBehaviourPunCallbacks : MonoBehaviourPunCallbacks
     {
         public string _userId = "";
 
@@ -14,7 +14,7 @@ namespace mark1
             _userId = user;
         }
 
-        public void SetUser(string user)
+        public virtual void SetUser(string user)
         {
             if (PhotonNetwork.IsConnected)
             {

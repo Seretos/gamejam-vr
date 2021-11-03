@@ -1,1 +1,71 @@
-{}
+{
+    "name": "input_actions",
+    "maps": [
+        {
+            "name": "default",
+            "id": "5ded428c-1b78-44cb-9aaa-96c3e15ad4d0",
+            "actions": [
+                {
+                    "name": "RightHandPosition",
+                    "type": "Value",
+                    "id": "84a60382-99ff-491c-a8a8-585213720487",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "RightHandRotation",
+                    "type": "Value",
+                    "id": "612bbc33-3129-4751-8317-b9f60d967265",
+                    "expectedControlType": "Quaternion",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "RightHandUIPress",
+                    "type": "Button",
+                    "id": "6e17c4d0-26dd-40a0-8e9c-0927de9cfa41",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "681abbf0-764a-4e0b-be88-20f6b703f482",
+                    "path": "<XRController>{RightHand}/devicePosition",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightHandPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3a4861b2-46fb-4a17-91ac-302c06077473",
+                    "path": "<XRController>{RightHand}/deviceRotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightHandRotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4856e8e7-1309-4e45-be55-845a14e11e4e",
+                    "path": "<XRController>{RightHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightHandUIPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

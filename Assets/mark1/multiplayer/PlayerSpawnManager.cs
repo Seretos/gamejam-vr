@@ -2,17 +2,17 @@ using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
 
-namespace mark1
+namespace mark1.multiplayer
 {
     public class PlayerSpawnManager : MonoBehaviourPunCallbacks
     {
         private HostSpawnPoint _hostSpawnPoint;
-        private ClientSpawnPoint[] _clientSpawnPoints;
+        private ClientSpawnArea[] _clientSpawnAreas;
 
         void Start()
         {
             _hostSpawnPoint = FindObjectOfType<HostSpawnPoint>();
-            _clientSpawnPoints = FindObjectsOfType<ClientSpawnPoint>();
+            _clientSpawnAreas = FindObjectsOfType<ClientSpawnArea>();
         }
 
         public override void OnJoinedRoom()
@@ -25,57 +25,57 @@ namespace mark1
             }
         }
 
-        public override void OnPlayerEnteredRoom(Player newPlayer)
+        public override void OnPlayerEnteredRoom(Photon.Realtime.Player newPlayer)
         {
             if (photonView.IsMine)
             {
                 Debug.Log("client joined the room");
-                FindFreeClientSpawnPoint().SetUser(newPlayer.UserId);
+                FindFreeClientSpawnArea().SetUser(newPlayer.UserId);
             }
             base.OnPlayerEnteredRoom(newPlayer);
         }
 
-        public override void OnPlayerLeftRoom(Player otherPlayer)
+        public override void OnPlayerLeftRoom(Photon.Realtime.Player otherPlayer)
         {
             if (photonView.IsMine)
             {
                 Debug.Log("client leaves the room");
-                ClearClientSpawnPoint(otherPlayer.UserId);
+                ClearClientSpawnArea(otherPlayer.UserId);
             }
             base.OnPlayerLeftRoom(otherPlayer);
         }
 
-        public override void OnMasterClientSwitched(Player newMasterClient)
+        public override void OnMasterClientSwitched(Photon.Realtime.Player newMasterClient)
         {
             base.OnMasterClientSwitched(newMasterClient);
             if (newMasterClient.UserId == PhotonNetwork.AuthValues.UserId)
             {
                 Debug.Log("switched from client to host");
                 _hostSpawnPoint.SetUser(PhotonNetwork.AuthValues.UserId);
-                ClearClientSpawnPoint(PhotonNetwork.AuthValues.UserId);
+                ClearClientSpawnArea(PhotonNetwork.AuthValues.UserId);
             }
         }
 
-        private ClientSpawnPoint FindFreeClientSpawnPoint()
+        private ClientSpawnArea FindFreeClientSpawnArea()
         {
-            foreach (ClientSpawnPoint clientSpawnPoint in _clientSpawnPoints)
+            foreach (ClientSpawnArea clientSpawnArea in _clientSpawnAreas)
             {
-                if (clientSpawnPoint.GetUser() == "")
+                if (clientSpawnArea.GetUser() == "")
                 {
-                    return clientSpawnPoint;
+                    return clientSpawnArea;
                 }
             }
-            Debug.Log("error! no free spawn point found!");
+            Debug.Log("error! no free spawn area found!");
             return null;
         }
 
-        private void ClearClientSpawnPoint(string user)
+        private void ClearClientSpawnArea(string user)
         {
-            foreach (ClientSpawnPoint clientSpawnPoint in _clientSpawnPoints)
+            foreach (ClientSpawnArea clientSpawnArea in _clientSpawnAreas)
             {
-                if (clientSpawnPoint.GetUser() == user)
+                if (clientSpawnArea.GetUser() == user)
                 {
-                    clientSpawnPoint.SetUser("");
+                    clientSpawnArea.SetUser("");
                 }
             }
         }

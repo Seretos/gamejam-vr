@@ -2,7 +2,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
 
-namespace mark1
+namespace mark1.multiplayer
 {
     public class SetupMultiplayer : MonoBehaviourPunCallbacks
     {
