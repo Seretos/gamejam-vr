@@ -6,11 +6,11 @@ namespace mark1.multiplayer
 {
     public class ClientSpawnArea : UserBehaviourPunCallbacks, IPunOwnershipCallbacks
     {
-        private SpawnPoint[] _spawnPoints;
+        private ClientSpawnPoint[] _spawnPoints;
 
         private void Start()
         {
-            _spawnPoints = GetComponentsInChildren<SpawnPoint>();
+            _spawnPoints = GetComponentsInChildren<ClientSpawnPoint>();
         }
 
         public override void SetUser(string user)

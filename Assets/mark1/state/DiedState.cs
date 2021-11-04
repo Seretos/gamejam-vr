@@ -1,24 +1,16 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
 namespace mark1.state
 {
-    public class StartState : PlayerState
+    public class DiedState : PlayerState
     {
         private XRRayInteractor[] _interactors;
-        
         public override void InitState(PlayerController c)
         {
             base.InitState(c);
-            type = PlayerController.PlayerStateType.Start;
-            
+            type = PlayerController.PlayerStateType.Died;
             _interactors = FindObjectsOfType<XRRayInteractor>();
-        }
-
-        public void JumpToGameState()
-        {
-            controller.SetActiveState(PlayerController.PlayerStateType.Game);
         }
         
         private void OnEnable()
@@ -33,6 +25,11 @@ namespace mark1.state
             }
         }
 
+        public void JumpToGameState()
+        {
+            controller.SetActiveState(PlayerController.PlayerStateType.Game);
+        }
+        
         private void OnDisable()
         {
             foreach (XRRayInteractor xrRayInteractor in _interactors)

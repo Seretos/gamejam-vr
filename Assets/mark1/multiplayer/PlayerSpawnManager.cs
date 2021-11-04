@@ -22,6 +22,9 @@ namespace mark1.multiplayer
             {
                 Debug.Log("host joined the room");
                 _hostSpawnPoint.SetUser(PhotonNetwork.AuthValues.UserId);
+                
+                //Debug.Log("[debug] start with client mode");
+                //FindFreeClientSpawnArea().SetUser(PhotonNetwork.AuthValues.UserId);
             }
         }
 

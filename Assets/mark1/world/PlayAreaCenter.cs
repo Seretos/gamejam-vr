@@ -1,18 +1,22 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace mark1.world
 {
     [RequireComponent(typeof(BoxCollider))]
     public class PlayAreaCenter : MonoBehaviour
     {
-        public PlayArea playArea;
+        //public PlayArea playArea;
+        public UnityEvent playerEnterCenter;
+        public UnityEvent playerLeaveCenter;
 
         private void OnTriggerEnter(Collider other)
         {
             if (other.GetComponent<Player>())
             {
-                playArea.playerEnterCenter.Invoke();
+                playerEnterCenter.Invoke();
+                //playArea.playerEnterCenter.Invoke();
             }
         }
 
@@ -20,7 +24,8 @@ namespace mark1.world
         {
             if (other.GetComponent<Player>())
             {
-                playArea.playerLeaveCenter.Invoke();
+                playerLeaveCenter.Invoke();
+                //playArea.playerLeaveCenter.Invoke();
             }
         }
     }

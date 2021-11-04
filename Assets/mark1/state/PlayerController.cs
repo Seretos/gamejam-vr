@@ -53,6 +53,8 @@ namespace mark1.state
             
             _activeState = _dictionary[newState];
             
+            Debug.Log($"switch to {newState} state");
+            
             _activeState.gameObject.SetActive(true);
         }
     }
