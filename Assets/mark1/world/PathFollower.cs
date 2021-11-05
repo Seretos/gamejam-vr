@@ -38,11 +38,13 @@ namespace mark1.world
                     running = false;
                 }
 
-
-                _position.transform.position =
-                    _path.path.GetPointAtDistance(_currentDistance, EndOfPathInstruction.Stop);
-                _position.transform.rotation =
-                    _path.path.GetRotationAtDistance(_currentDistance, EndOfPathInstruction.Stop);
+                if (_position.photonView.IsMine)
+                {
+                    _position.transform.position =
+                        _path.path.GetPointAtDistance(_currentDistance, EndOfPathInstruction.Stop);
+                    _position.transform.rotation =
+                        _path.path.GetRotationAtDistance(_currentDistance, EndOfPathInstruction.Stop);
+                }
             }
             SetAnchorPosition();
         }
