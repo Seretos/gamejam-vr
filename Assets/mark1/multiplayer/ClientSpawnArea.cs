@@ -5,7 +5,7 @@ using Photon.Realtime;
 
 namespace mark1.multiplayer
 {
-    public class ClientSpawnArea : UserBehaviourPunCallbacks
+    public class ClientSpawnArea : UserBehaviourPunCallbacks, IPunOwnershipCallbacks
     {
         private ClientSpawnPoint[] _spawnPoints;
 
@@ -19,13 +19,14 @@ namespace mark1.multiplayer
         {
             if (user == PhotonNetwork.AuthValues.UserId)
             {
-                photonView.RequestOwnership();
+                TakeSpawnAreaOwnership();
             }
             base.SetUserRPC(user);
         }
 
         private void TakeSpawnAreaOwnership()
         {
+            photonView.RequestOwnership();
             foreach (Position position in GetComponentsInChildren<Position>())
             {
                 if (position.GetComponent<PhotonView>())
@@ -46,6 +47,23 @@ namespace mark1.multiplayer
             int rInt = r.Next(0, _spawnPoints.Length);
             _spawnPoints[rInt].SetUser(PhotonNetwork.AuthValues.UserId);
             return _spawnPoints[rInt];
+        }
+        
+        public void OnOwnershipRequest(PhotonView targetView, Photon.Realtime.Player requestingPlayer)
+        {
+            if (targetView != photonView)
+                return;
+            photonView.TransferOwnership(requestingPlayer);
+        }
+
+        public void OnOwnershipTransfered(PhotonView targetView, Photon.Realtime.Player previousOwner)
+        {
+            if (targetView != photonView)
+                return;
+        }
+
+        public void OnOwnershipTransferFailed(PhotonView targetView, Photon.Realtime.Player senderOfFailedRequest)
+        {
         }
     }
 }
