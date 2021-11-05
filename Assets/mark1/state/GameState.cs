@@ -16,7 +16,7 @@ namespace mark1.state
 
         private void Update()
         {
-            if (controller.transform.parent == null)
+            if (controller.transform.parent == null && !PhotonNetwork.IsMasterClient)
             {
                 controller.SetActiveState(PlayerController.PlayerStateType.Died);
             }
