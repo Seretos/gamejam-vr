@@ -9,7 +9,7 @@ namespace mark1.multiplayer
         public string _userId = "";
 
         [PunRPC]
-        public void SetUserRPC(string user)
+        public virtual void SetUserRPC(string user)
         {
             _userId = user;
         }

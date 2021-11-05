@@ -1,10 +1,11 @@
 ﻿using System;
+using mark1.world;
 using Photon.Pun;
 using Photon.Realtime;
 
 namespace mark1.multiplayer
 {
-    public class ClientSpawnArea : UserBehaviourPunCallbacks, IPunOwnershipCallbacks
+    public class ClientSpawnArea : UserBehaviourPunCallbacks
     {
         private ClientSpawnPoint[] _spawnPoints;
 
@@ -13,15 +14,27 @@ namespace mark1.multiplayer
             _spawnPoints = GetComponentsInChildren<ClientSpawnPoint>();
         }
 
-        public override void SetUser(string user)
+        [PunRPC]
+        public override void SetUserRPC(string user)
         {
-            base.SetUser(user);
             if (user == PhotonNetwork.AuthValues.UserId)
             {
                 photonView.RequestOwnership();
             }
+            base.SetUserRPC(user);
         }
 
+        private void TakeSpawnAreaOwnership()
+        {
+            foreach (Position position in GetComponentsInChildren<Position>())
+            {
+                if (position.GetComponent<PhotonView>())
+                {
+                    position.GetComponent<PhotonView>().RequestOwnership();
+                }
+            }
+        }
+        
         public SpawnPoint GenerateSpawnPoint()
         {
             foreach (SpawnPoint spawnPoint in _spawnPoints)
@@ -33,23 +46,6 @@ namespace mark1.multiplayer
             int rInt = r.Next(0, _spawnPoints.Length);
             _spawnPoints[rInt].SetUser(PhotonNetwork.AuthValues.UserId);
             return _spawnPoints[rInt];
-        }
-
-        public void OnOwnershipRequest(PhotonView targetView, Photon.Realtime.Player requestingPlayer)
-        {
-            if (targetView != photonView)
-                return;
-            photonView.TransferOwnership(requestingPlayer);
-        }
-
-        public void OnOwnershipTransfered(PhotonView targetView, Photon.Realtime.Player previousOwner)
-        {
-            if (targetView != photonView)
-                return;
-        }
-
-        public void OnOwnershipTransferFailed(PhotonView targetView, Photon.Realtime.Player senderOfFailedRequest)
-        {
         }
     }
 }
