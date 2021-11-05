@@ -86324,6 +86324,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69da950bc556a4446aca172a6e7334a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  head: {fileID: 216422072}
+  body: {fileID: 1856136959}
+  rightHand: {fileID: 1410378374}
+  leftHand: {fileID: 145490009}
 --- !u!4 &1509105066
 Transform:
   m_ObjectHideFlags: 0
@@ -114506,10 +114510,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lastSpawnPoint: {fileID: 0}
-  head: {fileID: 216422072}
-  body: {fileID: 1856136959}
-  rightHand: {fileID: 1410378374}
-  leftHand: {fileID: 145490009}
 --- !u!4 &2051373719
 Transform:
   m_ObjectHideFlags: 0

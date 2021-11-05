@@ -48,7 +48,6 @@ namespace mark1.world
         
         private void OnTriggerEnter(Collider other)
         {
-            Debug.Log("enter: " + other.name);
             if (other.GetComponent<Position>())
             {
                 _enteredPositions.Add(other.GetComponent<Position>());
@@ -57,7 +56,6 @@ namespace mark1.world
 
         private void OnTriggerExit(Collider other)
         {
-            Debug.Log("exit: " + other.name);
             if (other.GetComponent<Position>())
             {
                 _enteredPositions.Remove(other.GetComponent<Position>());
