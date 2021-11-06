@@ -19,7 +19,7 @@ namespace mark1.multiplayer
         {
             if (user == PhotonNetwork.AuthValues.UserId)
             {
-                //TakeSpawnAreaOwnership();
+                TakeSpawnAreaOwnership();
             }
             base.SetUserRPC(user);
         }
@@ -27,11 +27,11 @@ namespace mark1.multiplayer
         private void TakeSpawnAreaOwnership()
         {
             photonView.RequestOwnership();
-            foreach (Position position in GetComponentsInChildren<Position>())
+            foreach (ClientOwnership ownerBlock in GetComponentsInChildren<ClientOwnership>())
             {
-                if (position.GetComponent<PhotonView>())
+                if (ownerBlock.GetComponent<PhotonView>())
                 {
-                    position.GetComponent<PhotonView>().RequestOwnership();
+                    ownerBlock.GetComponent<PhotonView>().RequestOwnership();
                 }
             }
         }

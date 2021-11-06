@@ -46144,6 +46144,7 @@ GameObject:
   - component: {fileID: 657699954}
   - component: {fileID: 657699953}
   - component: {fileID: 657699956}
+  - component: {fileID: 657699957}
   m_Layer: 0
   m_Name: MovePath
   m_TagString: Untagged
@@ -46225,7 +46226,7 @@ MonoBehaviour:
       - 0
       globalNormalsAngle: 0
       flipNormals: 1
-    vertexPathUpToDate: 0
+    vertexPathUpToDate: 1
     vertexPathMaxAngleError: 0.3
     vertexPathMinVertexSpacing: 0.01
     showTransformTool: 1
@@ -46262,13 +46263,25 @@ MonoBehaviour:
   Group: 0
   prefixField: -1
   Synchronization: 3
-  OwnershipTransfer: 0
+  OwnershipTransfer: 2
   observableSearch: 2
   ObservedComponents:
   - {fileID: 510858188}
   sceneViewId: 113
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &657699957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657699951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58f62331f4bb415f92a4f02e5c500c6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &657944585
 GameObject:
   m_ObjectHideFlags: 0
@@ -47244,6 +47257,7 @@ GameObject:
   - component: {fileID: 666259220}
   - component: {fileID: 666259219}
   - component: {fileID: 666259222}
+  - component: {fileID: 666259223}
   m_Layer: 0
   m_Name: MovePath (6)
   m_TagString: Untagged
@@ -47362,13 +47376,25 @@ MonoBehaviour:
   Group: 0
   prefixField: -1
   Synchronization: 3
-  OwnershipTransfer: 0
+  OwnershipTransfer: 2
   observableSearch: 2
   ObservedComponents:
   - {fileID: 960992485}
   sceneViewId: 120
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &666259223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666259217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58f62331f4bb415f92a4f02e5c500c6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &666317690
 GameObject:
   m_ObjectHideFlags: 0
