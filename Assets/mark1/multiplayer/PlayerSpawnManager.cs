@@ -1,6 +1,7 @@
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace mark1.multiplayer
 {
@@ -8,6 +9,7 @@ namespace mark1.multiplayer
     {
         private HostSpawnPoint _hostSpawnPoint;
         private ClientSpawnArea[] _clientSpawnAreas;
+        public UnityEvent switchToHost;
 
         void Start()
         {
@@ -56,6 +58,7 @@ namespace mark1.multiplayer
                 Debug.Log("switched from client to host");
                 _hostSpawnPoint.SetUser(PhotonNetwork.AuthValues.UserId);
                 ClearClientSpawnArea(PhotonNetwork.AuthValues.UserId);
+                switchToHost.Invoke();
             }
         }
 

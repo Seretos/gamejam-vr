@@ -23,6 +23,12 @@ namespace mark1.state
                 controller.SetActiveState(PlayerController.PlayerStateType.Died);
             }
         }
+        
+        public void SwitchPlayerToHost()
+        {
+            lastSpawnPoint = null;
+            controller.SetActiveState(PlayerController.PlayerStateType.Died);
+        }
 
         private void OnEnable()
         {
