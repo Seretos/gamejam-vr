@@ -1,10 +1,11 @@
 ﻿using PathCreation;
+using Photon.Pun;
 using UnityEngine;
 
 namespace mark1.world
 {
     [RequireComponent(typeof(PathCreator))]
-    public class PathFollower : MonoBehaviour
+    public class PathFollower : MonoBehaviourPunCallbacks
     {
         public float speed = 1.0f;
         public bool running = false;
@@ -22,7 +23,7 @@ namespace mark1.world
 
         private void Update()
         {
-            if (running && _position.photonView.IsMine)
+            if (running && photonView.IsMine)
             {
                 _currentDistance += (speed * Time.deltaTime) * _operation;
                 if (_currentDistance >= _path.path.length)
