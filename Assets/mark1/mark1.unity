@@ -22197,7 +22197,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &308971132
 Transform:
   m_ObjectHideFlags: 0
@@ -25664,7 +25664,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &357002074
 Transform:
   m_ObjectHideFlags: 0
@@ -36484,7 +36484,6 @@ GameObject:
   - component: {fileID: 510858190}
   - component: {fileID: 510858189}
   - component: {fileID: 510858188}
-  - component: {fileID: 510858187}
   m_Layer: 0
   m_Name: Position
   m_TagString: Untagged
@@ -36508,29 +36507,6 @@ Transform:
   m_Father: {fileID: 657699952}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &510858187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 510858185}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 2
-  observableSearch: 2
-  ObservedComponents:
-  - {fileID: 510858188}
-  sceneViewId: 113
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
 --- !u!114 &510858188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45691,7 +45667,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &650447754
 Transform:
   m_ObjectHideFlags: 0
@@ -46167,6 +46143,7 @@ GameObject:
   - component: {fileID: 657699955}
   - component: {fileID: 657699954}
   - component: {fileID: 657699953}
+  - component: {fileID: 657699956}
   m_Layer: 0
   m_Name: MovePath
   m_TagString: Untagged
@@ -46248,7 +46225,7 @@ MonoBehaviour:
       - 0
       globalNormalsAngle: 0
       flipNormals: 1
-    vertexPathUpToDate: 1
+    vertexPathUpToDate: 0
     vertexPathMaxAngleError: 0.3
     vertexPathMinVertexSpacing: 0.01
     showTransformTool: 1
@@ -46269,6 +46246,29 @@ MonoBehaviour:
     showNormalsHelpInfo: 0
     tabIndex: 0
   initialized: 1
+--- !u!114 &657699956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657699951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: 510858188}
+  sceneViewId: 113
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &657944585
 GameObject:
   m_ObjectHideFlags: 0
@@ -47243,6 +47243,7 @@ GameObject:
   - component: {fileID: 666259221}
   - component: {fileID: 666259220}
   - component: {fileID: 666259219}
+  - component: {fileID: 666259222}
   m_Layer: 0
   m_Name: MovePath (6)
   m_TagString: Untagged
@@ -47345,6 +47346,29 @@ MonoBehaviour:
     showNormalsHelpInfo: 0
     tabIndex: 0
   initialized: 1
+--- !u!114 &666259222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666259217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: 960992485}
+  sceneViewId: 120
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &666317690
 GameObject:
   m_ObjectHideFlags: 0
@@ -62234,7 +62258,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &885960605
 Transform:
   m_ObjectHideFlags: 0
@@ -67755,7 +67779,6 @@ GameObject:
   - component: {fileID: 960992487}
   - component: {fileID: 960992486}
   - component: {fileID: 960992485}
-  - component: {fileID: 960992484}
   m_Layer: 0
   m_Name: Position
   m_TagString: Untagged
@@ -67779,29 +67802,6 @@ Transform:
   m_Father: {fileID: 666259218}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &960992484
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 960992482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 2
-  observableSearch: 2
-  ObservedComponents:
-  - {fileID: 960992485}
-  sceneViewId: 120
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
 --- !u!114 &960992485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70227,7 +70227,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &996327531
 Transform:
   m_ObjectHideFlags: 0
@@ -76295,7 +76295,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1096523734
 Transform:
   m_ObjectHideFlags: 0
@@ -90371,7 +90371,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1310063801
 Transform:
   m_ObjectHideFlags: 0
@@ -92963,7 +92963,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1359037051
 Transform:
   m_ObjectHideFlags: 0
