@@ -22,7 +22,7 @@ namespace mark1.world
 
         private void Update()
         {
-            if (running)
+            if (running && _position.photonView.IsMine)
             {
                 _currentDistance += (speed * Time.deltaTime) * _operation;
                 if (_currentDistance >= _path.path.length)
@@ -37,14 +37,11 @@ namespace mark1.world
                     _currentDistance = 0.0f;
                     running = false;
                 }
-
-                if (_position.photonView.IsMine)
-                {
-                    _position.transform.position =
-                        _path.path.GetPointAtDistance(_currentDistance, EndOfPathInstruction.Stop);
-                    _position.transform.rotation =
-                        _path.path.GetRotationAtDistance(_currentDistance, EndOfPathInstruction.Stop);
-                }
+                
+                _position.transform.position = 
+                    _path.path.GetPointAtDistance(_currentDistance, EndOfPathInstruction.Stop); 
+                _position.transform.rotation = 
+                    _path.path.GetRotationAtDistance(_currentDistance, EndOfPathInstruction.Stop);
             }
             SetAnchorPosition();
         }
