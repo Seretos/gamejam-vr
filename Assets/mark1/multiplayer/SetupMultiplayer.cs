@@ -36,17 +36,20 @@ namespace mark1.multiplayer
         public override void OnJoinedRoom()
         {
             base.OnJoinedRoom();
-            if (!_networkPlayerInstance)
-            {
-                _networkPlayerInstance =
-                    PhotonNetwork.Instantiate("generic_avatar", transform.position, transform.rotation);
+            _networkPlayerInstance =
+                PhotonNetwork.Instantiate("generic_avatar", transform.position, transform.rotation);
                 
-                NetworkPlayer netPlayer = _networkPlayerInstance.GetComponent<NetworkPlayer>();
-                netPlayer.head = head;
-                netPlayer.body = body;
-                netPlayer.rightHand = rightHand;
-                netPlayer.leftHand = leftHand;
-            }
+            NetworkPlayer netPlayer = _networkPlayerInstance.GetComponent<NetworkPlayer>();
+            netPlayer.head = head;
+            netPlayer.body = body;
+            netPlayer.rightHand = rightHand;
+            netPlayer.leftHand = leftHand;
+        }
+
+        public override void OnLeftRoom()
+        {
+            base.OnLeftRoom();
+            PhotonNetwork.Destroy(_networkPlayerInstance);
         }
     }
 }
