@@ -19,7 +19,7 @@ namespace mark1.multiplayer
         {
             if (user == PhotonNetwork.AuthValues.UserId)
             {
-                TakeSpawnAreaOwnership();
+                //TakeSpawnAreaOwnership();
             }
             base.SetUserRPC(user);
         }
