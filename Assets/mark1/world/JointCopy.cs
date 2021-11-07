@@ -14,7 +14,7 @@ namespace mark1.world
             {
                 source.position = transform.position;
                 source.rotation = transform.rotation;
-                source.localScale = transform.localScale;
+                //source.localScale = transform.localScale;
             }
         }
     }
