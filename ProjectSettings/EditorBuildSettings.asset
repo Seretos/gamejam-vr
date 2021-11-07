@@ -9,5 +9,9 @@ EditorBuildSettings:
     path: Assets/mark1/mark1.unity
     guid: 7eaa0029039998549a420829e6a3676e
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: db77eb6c4a217044c85e5106c7f201a6, type: 2}
+    Unity.XR.OpenVR.Settings: {fileID: 11400000, guid: 3aaa0a5006d8e56428588dbc95e93da9, type: 2}
+    Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 9fdf86e36add18c4ebcb5dd550d86b8f, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: c0de708bc33f2b542a38c99798004702, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: d95c823b97d0716478e1e8fa571dfe1d, type: 2}
+    xr.sdk.mock-hmd.settings: {fileID: 11400000, guid: 5b7fc2ef572df5344ab56317b2302c23, type: 2}
