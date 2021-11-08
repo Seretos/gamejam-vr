@@ -43,9 +43,7 @@ jobs:
     environment:
       BUILD_TARGET: StandaloneWindows64
 
-# Invoke jobs via workflows
-# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  say-hello-workflow:
+  build-workflow:
     jobs:
-      - say-hello
+      - build_windows
