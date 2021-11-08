@@ -40,7 +40,6 @@ executors:
 jobs:
   activate:
     executor: unity_exec
-    type: approval
     steps:
       - run: 
           name: get activation file
