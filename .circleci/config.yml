@@ -38,6 +38,13 @@ executors:
         path: build.zip
 
 jobs:
+  activate:
+    executor: unity_exec
+    type: approval
+    steps:
+      - run: 
+          name: get activation file
+          command: chmod +x ./ci/activation.sh && ./ci/activation.sh
   build_windows:
     <<: *build
     environment:
@@ -46,4 +53,5 @@ jobs:
 workflows:
   build-workflow:
     jobs:
+      - activate
       - build_windows
