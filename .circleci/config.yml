@@ -3,7 +3,7 @@ version: 2.1
 executors:
   unity_exec:
     docker:
-      - image: unityci/editor:2020.3.21f1
+      - image: unityci/editor:2020.3.21f1-windows-mono-0
     environment:
       BUILD_NAME: ExampleProjectName
 
