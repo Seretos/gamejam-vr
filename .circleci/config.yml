@@ -41,6 +41,7 @@ jobs:
   activate:
     executor: unity_exec
     steps:
+      - checkout
       - run: 
           name: get activation file
           command: chmod +x ./ci/activation.sh && ./ci/activation.sh
